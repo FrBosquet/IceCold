@@ -11,8 +11,9 @@ public class Ball : BaseScript
   private bool isFloating = false;
   private int waterCollider = 0;
 
-  private void Awake()
+  private new void Awake()
   {
+    base.Awake();
     rigidbody = gameObject.GetComponent<Rigidbody2D>();
   }
 
@@ -28,7 +29,7 @@ public class Ball : BaseScript
   {
     if (other.gameObject.CompareTag(GOAL))
     {
-      Debug.Log("Win");
+      gameManager.NextLevel();
     }
     else if (other.gameObject.CompareTag(WATER))
     {

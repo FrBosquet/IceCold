@@ -8,7 +8,7 @@ public class BaseScript : MonoBehaviour
   protected string GOAL = "Goal";
   protected string WATER = "Water";
 
-  private void Awake()
+  protected void Awake()
   {
     gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
   }

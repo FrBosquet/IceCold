@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IceScript : MonoBehaviour
+public class Ice : BaseScript
 {
+  public bool hasWater = false;
+
   private void OnMouseDown()
   {
-    Debug.Log("Click me!!!");
+    gameManager.BreakIce(gameObject, hasWater);
   }
 }
