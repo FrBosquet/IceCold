@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Ice : BaseScript
 {
+  public bool hasWater = false;
+
   private void OnMouseDown()
   {
-    gameManager.BreakIce(gameObject);
+    gameManager.BreakIce(gameObject, hasWater);
   }
 }

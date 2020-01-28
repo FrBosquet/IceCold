@@ -10152,7 +10152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 000ce2d9022eaa34e9773a6072061ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasWater: 1
 --- !u!1001 &1280871671
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -9,10 +9,13 @@ public class GameManager : MonoBehaviour
 
   public GameObject WaterContainer;
 
-  public void BreakIce(GameObject block)
+  public void BreakIce(GameObject block, bool hasWater)
   {
-    GameObject newWaterBlock = Instantiate(WaterPrefab, block.transform.position, WaterPrefab.transform.rotation);
-    newWaterBlock.transform.SetParent(WaterContainer.transform);
+    if (hasWater)
+    {
+      GameObject newWaterBlock = Instantiate(WaterPrefab, block.transform.position, WaterPrefab.transform.rotation);
+      newWaterBlock.transform.SetParent(WaterContainer.transform);
+    }
 
     Destroy(block);
   }
