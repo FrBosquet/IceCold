@@ -5,4 +5,5 @@ using UnityEngine;
 public class BaseScript : MonoBehaviour
 {
   protected string GOAL = "Goal";
+  protected string WATER = "Water";
 }
