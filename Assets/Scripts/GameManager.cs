@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     }
 
     Destroy(block);
+    UpdateCurrents();
+
   }
 
   public void FreezeWater(GameObject block)
@@ -30,6 +32,17 @@ public class GameManager : MonoBehaviour
 
     newIceBlock.GetComponent<Ice>().hasWater = true;
     Destroy(block);
+    UpdateCurrents();
+  }
+
+  public void UpdateCurrents()
+  {
+    Current[] currents = GameObject.FindObjectsOfType<Current>();
+
+    foreach (Current current in currents)
+    {
+      current.UpdateCurrent();
+    }
   }
 
   public void NextLevel()
