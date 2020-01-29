@@ -51,4 +51,10 @@ public class GameManager : MonoBehaviour
     int currentIndex = SceneManager.GetActiveScene().buildIndex;
     Application.LoadLevel(currentIndex + 1);
   }
+
+  public void RestartLevel()
+  {
+    int currentIndex = SceneManager.GetActiveScene().buildIndex;
+    Application.LoadLevel(currentIndex);
+  }
 }
