@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
   public GameObject IcePrefab;
 
   public GameObject WaterContainer;
+  public GameObject IceContainer;
 
   public void BreakIce(GameObject block, bool hasWater)
   {
@@ -18,6 +19,16 @@ public class GameManager : MonoBehaviour
       newWaterBlock.transform.SetParent(WaterContainer.transform);
     }
 
+    Destroy(block);
+  }
+
+  public void FreezeWater(GameObject block)
+  {
+
+    GameObject newIceBlock = Instantiate(IcePrefab, block.transform.position, IcePrefab.transform.rotation);
+    newIceBlock.transform.SetParent(IceContainer.transform);
+
+    newIceBlock.GetComponent<Ice>().hasWater = true;
     Destroy(block);
   }
 
