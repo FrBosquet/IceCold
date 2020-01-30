@@ -8,20 +8,23 @@ public class GameManager : MonoBehaviour
   public GameObject WaterPrefab;
   public GameObject IcePrefab;
 
-  public GameObject WaterContainer;
-  public GameObject IceContainer;
+  private GameObject BackgroundContainer;
+  private GameObject IceContainer;
+  private GameObject RockContainer;
+  private GameObject WaterContainer;
 
-  public void BreakIce(GameObject block, bool hasWater)
+  private void Awake()
   {
-    if (hasWater)
-    {
-      GameObject newWaterBlock = Instantiate(WaterPrefab, block.transform.position, WaterPrefab.transform.rotation);
-      newWaterBlock.transform.SetParent(WaterContainer.transform);
-    }
+    BackgroundContainer = GameObject.Find("BackgroundContainer");
+    IceContainer = GameObject.Find("IceContainer");
+    RockContainer = GameObject.Find("RockContainer");
+    WaterContainer = GameObject.Find("WaterContainer");
+  }
 
+  public void BreakIce(GameObject block)
+  {
     Destroy(block);
     UpdateCurrents();
-
   }
 
   public void FreezeWater(GameObject block)
@@ -30,8 +33,6 @@ public class GameManager : MonoBehaviour
     GameObject newIceBlock = Instantiate(IcePrefab, block.transform.position, IcePrefab.transform.rotation);
     newIceBlock.transform.SetParent(IceContainer.transform);
 
-    newIceBlock.GetComponent<Ice>().hasWater = true;
-    Destroy(block);
     UpdateCurrents();
   }
 
