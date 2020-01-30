@@ -44,3 +44,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 2999204971
+    locked: 0
+  - name: Goal
+    uniqueID: 362771565
+    locked: 0
+  - name: Water
+    uniqueID: 1996242765
+    locked: 0
+  - name: Ice
+    uniqueID: 1358479535
+    locked: 0
+  - name: Rocks
+    uniqueID: 220597981
+    locked: 0
