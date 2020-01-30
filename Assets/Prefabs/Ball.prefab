@@ -133,4 +133,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floatingForce: 2200
-  impactForce: 30
+  impactForce: 10
+  currentForce: {x: 0, y: 0}

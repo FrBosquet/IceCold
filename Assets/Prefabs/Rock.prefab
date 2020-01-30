@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5795562610093178086}
   - component: {fileID: 5795562610093178073}
   - component: {fileID: 1162451186}
+  - component: {fileID: 1238108923}
   m_Layer: 9
   m_Name: Rock
   m_TagString: Untagged
@@ -68,10 +69,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 220597981
+  m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 96e428808775fd041b10d9116840115d, type: 3}
+  m_Sprite: {fileID: 2031576970619345123, guid: 235d58956706c964889b6097cca66f63,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -129,3 +131,37 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1238108923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5795562610093178072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb86dd54bd6d73a4fada60c94451dffe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 1726345965144709759, guid: 235d58956706c964889b6097cca66f63, type: 3}
+  - {fileID: 6449056337084468254, guid: 235d58956706c964889b6097cca66f63, type: 3}
+  - {fileID: 6920081002325729765, guid: 235d58956706c964889b6097cca66f63, type: 3}
+  - {fileID: 1286089773331460429, guid: 235d58956706c964889b6097cca66f63, type: 3}
+  - {fileID: 2328945909685207228, guid: 235d58956706c964889b6097cca66f63, type: 3}
+  - {fileID: 7185661899084076643, guid: 235d58956706c964889b6097cca66f63, type: 3}
+  - {fileID: 7590678608887247211, guid: 235d58956706c964889b6097cca66f63, type: 3}
+  - {fileID: 2501836346586095752, guid: 235d58956706c964889b6097cca66f63, type: 3}
+  - {fileID: -6890891705573453642, guid: 235d58956706c964889b6097cca66f63, type: 3}
+  - {fileID: -6619719251852392837, guid: 235d58956706c964889b6097cca66f63, type: 3}
+  - {fileID: 1324271104286984274, guid: 235d58956706c964889b6097cca66f63, type: 3}
+  - {fileID: -5341313540073877864, guid: 235d58956706c964889b6097cca66f63, type: 3}
+  - {fileID: -561209767445221321, guid: 235d58956706c964889b6097cca66f63, type: 3}
+  - {fileID: -8199663950508650188, guid: 235d58956706c964889b6097cca66f63, type: 3}
+  - {fileID: 3003672604016034476, guid: 235d58956706c964889b6097cca66f63, type: 3}
+  - {fileID: 2031576970619345123, guid: 235d58956706c964889b6097cca66f63, type: 3}
+  - {fileID: 522266855219768182, guid: 235d58956706c964889b6097cca66f63, type: 3}
+  - {fileID: 8498798501832262431, guid: 235d58956706c964889b6097cca66f63, type: 3}
+  - {fileID: 8865203572712174695, guid: 235d58956706c964889b6097cca66f63, type: 3}
+  - {fileID: -4305899560017065688, guid: 235d58956706c964889b6097cca66f63, type: 3}
+  neigbours: 0001010101010101
