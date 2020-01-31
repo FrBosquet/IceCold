@@ -8,6 +8,7 @@ public class BaseScript : MonoBehaviour
   protected string GOAL = "Goal";
   protected string WATER = "Water";
   protected string CURRENT = "Current";
+  protected string FAIL = "Fail";
 
   protected void Awake()
   {

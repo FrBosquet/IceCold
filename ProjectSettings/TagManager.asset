@@ -7,6 +7,8 @@ TagManager:
   - Goal
   - Water
   - Current
+  - Failing
+  - Fail
   layers:
   - Default
   - TransparentFX

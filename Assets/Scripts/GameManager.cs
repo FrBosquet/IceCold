@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
   public GameObject WaterPrefab;
   public GameObject IcePrefab;
+  public UIManager uiManager;
 
   private GameObject BackgroundContainer;
   private GameObject IceContainer;
@@ -46,16 +47,21 @@ public class GameManager : MonoBehaviour
     }
   }
 
+  public void FailLevel()
+  {
+    uiManager.HighlightReset();
+  }
+
   public void NextLevel()
   {
     Debug.Log("Next level!!");
     int currentIndex = SceneManager.GetActiveScene().buildIndex;
-    Application.LoadLevel(currentIndex + 1);
+    SceneManager.LoadScene(currentIndex + 1);
   }
 
   public void RestartLevel()
   {
     int currentIndex = SceneManager.GetActiveScene().buildIndex;
-    Application.LoadLevel(currentIndex);
+    SceneManager.LoadScene(currentIndex);
   }
 }

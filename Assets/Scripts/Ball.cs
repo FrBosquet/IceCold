@@ -50,7 +50,11 @@ public class Ball : BaseScript
 
   private void OnTriggerExit2D(Collider2D other)
   {
-    if (other.gameObject.CompareTag(WATER))
+    if (other.gameObject.CompareTag(FAIL))
+    {
+      gameManager.FailLevel();
+    }
+    else if (other.gameObject.CompareTag(WATER))
     {
       waterCollider--;
       checkFloating();
