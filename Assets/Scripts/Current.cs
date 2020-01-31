@@ -8,7 +8,13 @@ public class Current : MonoBehaviour
   public float force;
   public new Transform collider;
 
+  private ParticleSystem particles;
   private Vector2 position;
+
+  private void Awake()
+  {
+    particles = GetComponentInChildren<ParticleSystem>();
+  }
 
   private void Start()
   {
@@ -25,6 +31,12 @@ public class Current : MonoBehaviour
 
     LayerMask mask = LayerMask.GetMask("Solid");
     RaycastHit2D hit = Physics2D.Raycast(transform.position + (Vector3)normalized / 100, direction, 100f, mask);
+
+    float particleSpeed = particles.main.startSpeed.constant;
+
+    ParticleSystem.MainModule psmain = particles.main;
+    psmain.startLifetime = new ParticleSystem.MinMaxCurve(direction.magnitude / particleSpeed);
+    particles.Play();
 
     float distance = Mathf.Min(Mathf.Round(hit.distance), direction.magnitude);
     Debug.Log(distance);
