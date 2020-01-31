@@ -7,7 +7,7 @@ public class Ball : BaseScript
   public float floatingForce = 2400f;
   public float impactForce = 5000f;
 
-  public Vector2 currentForce = Vector2.zero;
+  private List<Current> suscribedCurrents = new List<Current>();
 
   private new Rigidbody2D rigidbody;
   private bool isFloating = false;
@@ -21,6 +21,11 @@ public class Ball : BaseScript
 
   private void FixedUpdate()
   {
+    Vector2 currentForce = Vector2.zero;
+    foreach (Current current in suscribedCurrents)
+    {
+      currentForce += current.GetForce(transform.position);
+    }
     rigidbody.AddForce(currentForce);
 
     if (isFloating)
@@ -42,9 +47,7 @@ public class Ball : BaseScript
     }
     else if (other.gameObject.CompareTag(CURRENT))
     {
-      Vector2 force = other.transform.parent.GetComponent<Current>().GetForce();
-
-      currentForce += force;
+      suscribedCurrents.Add(other.transform.parent.GetComponent<Current>());
     }
   }
 
@@ -61,9 +64,8 @@ public class Ball : BaseScript
     }
     else if (other.gameObject.CompareTag(CURRENT))
     {
-      Vector2 force = other.transform.parent.GetComponent<Current>().GetForce();
 
-      currentForce -= force;
+      suscribedCurrents.Remove(other.transform.parent.GetComponent<Current>());
     }
   }
 
