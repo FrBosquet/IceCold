@@ -26,13 +26,16 @@ public class Current : MonoBehaviour
     LayerMask mask = LayerMask.GetMask("Solid");
     RaycastHit2D hit = Physics2D.Raycast(transform.position + (Vector3)normalized / 100, direction, 100f, mask);
 
-    float distance = Mathf.Round(hit.distance);
+    float distance = Mathf.Min(Mathf.Round(hit.distance), direction.magnitude);
+    Debug.Log(distance);
 
     transform.localScale = Vector2.one + normalized * distance - normalized;
   }
 
-  public Vector2 GetForce()
+  public Vector2 GetForce(Vector2 ballPosition)
   {
-    return force * direction.normalized;
+    float distance = Vector2.Distance(ballPosition, position);
+    float maxDistance = direction.magnitude;
+    return force * direction.normalized * (distance / maxDistance);
   }
 }
