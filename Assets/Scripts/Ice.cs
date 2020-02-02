@@ -6,8 +6,6 @@ public class Ice : BaseScript
 {
   private void OnMouseDown()
   {
-    Debug.Log("Clicked on ice");
-
     gameManager.BreakIce(gameObject);
   }
 }

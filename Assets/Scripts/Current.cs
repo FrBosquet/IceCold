@@ -39,7 +39,6 @@ public class Current : MonoBehaviour
     particles.Play();
 
     float distance = Mathf.Min(Mathf.Round(hit.distance), direction.magnitude);
-    Debug.Log(distance);
 
     transform.localScale = Vector2.one + normalized * distance - normalized;
   }
