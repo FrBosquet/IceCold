@@ -6,6 +6,13 @@ public class JumpingPlate : MonoBehaviour
 {
   public float force;
 
+  private Animator animator;
+
+  private void Awake()
+  {
+    animator = gameObject.GetComponent<Animator>();
+  }
+
   private void OnTriggerEnter2D(Collider2D other)
   {
     if (other.gameObject.CompareTag("Ball"))
@@ -13,6 +20,7 @@ public class JumpingPlate : MonoBehaviour
 
       Rigidbody2D ball = other.gameObject.GetComponent<Rigidbody2D>();
 
+      animator.SetTrigger("jump");
       ball.AddForce(transform.up * force, ForceMode2D.Impulse);
     }
   }
