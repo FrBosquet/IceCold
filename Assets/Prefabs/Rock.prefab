@@ -93,8 +93,8 @@ GameObject:
   - component: {fileID: 5795562610093178073}
   - component: {fileID: 1162451186}
   - component: {fileID: 1238108923}
-  - component: {fileID: -3900817901748686422}
   - component: {fileID: 1702431885354869669}
+  - component: {fileID: 1951660475903092488}
   m_Layer: 9
   m_Name: Rock
   m_TagString: Untagged
@@ -252,19 +252,6 @@ MonoBehaviour:
   - {fileID: 8865203572712174695, guid: 235d58956706c964889b6097cca66f63, type: 3}
   - {fileID: -4305899560017065688, guid: 235d58956706c964889b6097cca66f63, type: 3}
   neigbours: 0101010101010101
---- !u!114 &-3900817901748686422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5795562610093178072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d5ab5e3f33553b4282f7c1185864794, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: rock
 --- !u!114 &1702431885354869669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,6 +268,19 @@ MonoBehaviour:
   rightSpot: {fileID: 7766224591778908357}
   downSpot: {fileID: 5197735922082652098}
   leftSpot: {fileID: 6630430801155743247}
+--- !u!114 &1951660475903092488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5795562610093178072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d5ab5e3f33553b4282f7c1185864794, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: rock
 --- !u!1001 &219908756156155754
 PrefabInstance:
   m_ObjectHideFlags: 0

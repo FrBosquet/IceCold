@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
   private GameObject IceContainer;
   private GameObject RockContainer;
   private GameObject WaterContainer;
+  private GameObject InteractableContainer;
 
   public string currentTool;
 
@@ -35,6 +36,7 @@ public class GameManager : MonoBehaviour
     IceContainer = GameObject.Find("IceContainer");
     RockContainer = GameObject.Find("RockContainer");
     WaterContainer = GameObject.Find("WaterContainer");
+    InteractableContainer = GameObject.Find("InteractableContainer");
   }
 
   private void Start()
@@ -113,5 +115,8 @@ public class GameManager : MonoBehaviour
     cursorManager.SetCurrentTool(currentTool);
   }
 
-
+  public void StoreAsInteractable(GameObject target)
+  {
+    target.transform.SetParent(InteractableContainer.transform);
+  }
 }
