@@ -36,6 +36,10 @@ public class Ball : BaseScript
 
   private void OnTriggerEnter2D(Collider2D other)
   {
+    if (other.gameObject.CompareTag(FAIL))
+    {
+      gameManager.FailLevel();
+    }
     if (other.gameObject.CompareTag(GOAL))
     {
       gameManager.NextLevel();
@@ -53,11 +57,7 @@ public class Ball : BaseScript
 
   private void OnTriggerExit2D(Collider2D other)
   {
-    if (other.gameObject.CompareTag(FAIL))
-    {
-      gameManager.FailLevel();
-    }
-    else if (other.gameObject.CompareTag(WATER))
+    if (other.gameObject.CompareTag(WATER))
     {
       waterCollider--;
       checkFloating();

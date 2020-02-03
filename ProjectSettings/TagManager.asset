@@ -9,6 +9,7 @@ TagManager:
   - Current
   - Failing
   - Fail
+  - Ball
   layers:
   - Default
   - TransparentFX
@@ -60,4 +61,7 @@ TagManager:
     locked: 0
   - name: Rocks
     uniqueID: 220597981
+    locked: 0
+  - name: Interactables
+    uniqueID: 3136694529
     locked: 0

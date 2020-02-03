@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4796674619145140295}
   - component: {fileID: 4796674619145140292}
-  - component: {fileID: 4796674619145140294}
   m_Layer: 8
   m_Name: FailedLevelTrigger
   m_TagString: Fail
@@ -58,15 +57,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.1}
   m_EdgeRadius: 0
---- !u!114 &4796674619145140294
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4796674619145140293}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca3e3f7b6d1858042914627779388bb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
