@@ -66,8 +66,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1295762325
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: bdc0ddf53fbd2954e8e6cbe2f595c031, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 7447459909021887061}
   - component: {fileID: 7447459909021887060}
   - component: {fileID: 7447459909021887063}
+  - component: {fileID: 5249543380546869582}
   m_Layer: 0
   m_Name: Rock_Ramp_1
   m_TagString: Untagged
@@ -191,3 +192,16 @@ PolygonCollider2D:
     - - {x: -0.5, y: 0.5}
       - {x: -0.5, y: -0.5}
       - {x: 0.5, y: -0.5}
+--- !u!114 &5249543380546869582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7447459909021887062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d5ab5e3f33553b4282f7c1185864794, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: rock

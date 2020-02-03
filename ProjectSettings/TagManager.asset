@@ -10,6 +10,9 @@ TagManager:
   - Failing
   - Fail
   - Ball
+  - Ice
+  - Cursor
+  - BuildSpot
   layers:
   - Default
   - TransparentFX
@@ -21,7 +24,7 @@ TagManager:
   - 
   - Ball
   - Solid
-  - 
+  - Background
   - 
   - 
   - 
@@ -61,6 +64,9 @@ TagManager:
     locked: 0
   - name: Rocks
     uniqueID: 220597981
+    locked: 0
+  - name: Build
+    uniqueID: 1332433123
     locked: 0
   - name: Interactables
     uniqueID: 3136694529
