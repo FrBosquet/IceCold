@@ -5528,6 +5528,11 @@ PrefabInstance:
       propertyPath: availableTools.jumpingplate
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7898875861014924070, guid: 1e2e3f335381c07479f86f3a5a896875,
+        type: 3}
+      propertyPath: availableTools.picks
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7898875861014924071, guid: 1e2e3f335381c07479f86f3a5a896875,
         type: 3}
       propertyPath: m_LocalPosition.x

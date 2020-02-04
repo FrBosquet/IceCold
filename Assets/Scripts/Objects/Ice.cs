@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Ice : BaseScript
 {
-  private new BoxCollider2D collider;
+  public new BoxCollider2D collider;
   private ParticleSystem particles;
   private SpriteRenderer sprite;
 
@@ -29,7 +29,7 @@ public class Ice : BaseScript
 
   IEnumerator WaitAndDestroy()
   {
-    yield return new WaitForSeconds(1);
+    yield return new WaitForSeconds(1f);
     Destroy(gameObject);
   }
 }

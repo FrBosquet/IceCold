@@ -9,6 +9,10 @@ public struct AvailableTools
   public bool pick;
   public bool freeze;
   public bool jumpingplate;
+
+  public int picks;
+  public int freezers;
+  public int jumpingplates;
 }
 
 public class GameManager : MonoBehaviour
@@ -60,34 +64,64 @@ public class GameManager : MonoBehaviour
 
   public bool BreakIce(GameObject block)
   {
-    if (currentTool != "pick") return false;
+    if (!UseTool("pick", availableTools.picks)) return false;
+
     PlaySound("iceBreak");
 
-    UpdateCurrents();
+    StartCoroutine(UpdateCurrents());
     return true;
   }
 
   public void FreezeWater(GameObject block)
   {
-    if (currentTool != "freeze") return;
+    if (!UseTool("freeze", availableTools.freezers)) return;
+
     PlaySound("freezeWater");
 
     GameObject newIceBlock = Instantiate(IcePrefab, block.transform.position, IcePrefab.transform.rotation);
     newIceBlock.transform.SetParent(IceContainer.transform);
 
-    UpdateCurrents();
+    StartCoroutine(UpdateCurrents());
   }
 
   public void BuildHere(Transform target)
   {
-    if (currentTool != "jumpingplate") return;
+    if (!UseTool("jumpingplate", availableTools.jumpingplates)) return;
+
     PlaySound("build");
 
     GameObject NewJumpingPlate = Instantiate(JumpingplatePrefab, target.position, target.rotation);
   }
 
-  public void UpdateCurrents()
+  private bool UseTool(string tool, int toolsLeft)
   {
+    if (currentTool != tool) return false;
+    if (toolsLeft == 0)
+    {
+      PlaySound("error");
+      return false;
+    }
+
+    switch (tool)
+    {
+      case "pick":
+        availableTools.picks--;
+        break;
+      case "freeze":
+        availableTools.freezers--;
+        break;
+      case "jumpingplate":
+        availableTools.jumpingplates--;
+        break;
+    }
+
+    UpdateUI();
+    return true;
+  }
+
+  public IEnumerator UpdateCurrents()
+  {
+    yield return new WaitForSeconds(0f);
     Current[] currents = GameObject.FindObjectsOfType<Current>();
 
     foreach (Current current in currents)

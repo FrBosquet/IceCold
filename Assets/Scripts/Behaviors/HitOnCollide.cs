@@ -6,7 +6,7 @@ public class HitOnCollide : BaseScript
 {
   private void OnCollisionEnter2D(Collision2D other)
   {
-    if (other.relativeVelocity.magnitude > 1)
+    if (other.relativeVelocity.magnitude > 2)
     {
       gameManager.PlaySound("hit");
     }

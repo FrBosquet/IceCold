@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using TMPro;
 
 public class UIManager : MonoBehaviour
 {
@@ -27,6 +28,8 @@ public class UIManager : MonoBehaviour
     if (availableTools.pick)
     {
       pickButton.position = new Vector2(offset, 15);
+      TextMeshProUGUI text = pickButton.GetComponentInChildren<TextMeshProUGUI>();
+      text.text = availableTools.picks.ToString();
       offset += 65;
     }
     else
@@ -37,6 +40,8 @@ public class UIManager : MonoBehaviour
     if (availableTools.freeze)
     {
       freezeButton.position = new Vector2(offset, 15);
+      TextMeshProUGUI text = freezeButton.GetComponentInChildren<TextMeshProUGUI>();
+      text.text = availableTools.freezers.ToString();
       offset += 65;
     }
     else
@@ -47,6 +52,8 @@ public class UIManager : MonoBehaviour
     if (availableTools.jumpingplate)
     {
       jumpingplateButton.position = new Vector2(offset, 15);
+      TextMeshProUGUI text = jumpingplateButton.GetComponentInChildren<TextMeshProUGUI>();
+      text.text = availableTools.jumpingplates.ToString();
       offset += 65;
     }
     else
