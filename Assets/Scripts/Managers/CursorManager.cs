@@ -51,11 +51,6 @@ public class CursorManager : MonoBehaviour
     }
   }
 
-  private void OnTriggerEnter2D(Collider2D other)
-  {
-    Debug.Log("Hitt something");
-  }
-
   public void SetCurrentTool(string tool)
   {
     currentTool = tool;
