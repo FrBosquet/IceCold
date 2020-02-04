@@ -11,7 +11,7 @@ public class BaseScript : MonoBehaviour
   protected string CURRENT = "Current";
   protected string FAIL = "Fail";
 
-  protected void Awake()
+  protected virtual void Awake()
   {
     gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     cursorManager = GameObject.Find("CursorManager").GetComponent<CursorManager>();

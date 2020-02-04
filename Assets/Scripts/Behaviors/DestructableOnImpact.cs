@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestructableOnImpact : MonoBehaviour
+public class DestructableOnImpact : BaseScript
 {
   public float requiredEnergy;
 
@@ -10,8 +10,9 @@ public class DestructableOnImpact : MonoBehaviour
   private ParticleSystem particles;
   private SpriteRenderer sprite;
 
-  private void Awake()
+  protected override void Awake()
   {
+    base.Awake();
     collider = gameObject.GetComponent<BoxCollider2D>();
     particles = GetComponentInChildren<ParticleSystem>();
     sprite = gameObject.GetComponent<SpriteRenderer>();
@@ -37,6 +38,7 @@ public class DestructableOnImpact : MonoBehaviour
 
     if (energy > requiredEnergy)
     {
+      gameManager.PlaySound("rockBreak");
       collider.enabled = false;
       sprite.enabled = false;
       particles.Play();

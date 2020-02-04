@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
 
   public UIManager uiManager;
   public CursorManager cursorManager;
+  public SoundManager soundManager;
 
   private GameObject BackgroundContainer;
   private GameObject IceContainer;
@@ -43,7 +44,9 @@ public class GameManager : MonoBehaviour
 
   private void Start()
   {
-    SetTool(GetDefaultTool());
+    currentTool = GetDefaultTool();
+    cursorManager.SetCurrentTool(currentTool);
+
     UpdateUI();
   }
 
@@ -58,6 +61,8 @@ public class GameManager : MonoBehaviour
   public void BreakIce(GameObject block)
   {
     if (currentTool != "pick") return;
+    PlaySound("iceBreak");
+
     Destroy(block);
     UpdateCurrents();
   }
@@ -65,6 +70,8 @@ public class GameManager : MonoBehaviour
   public void FreezeWater(GameObject block)
   {
     if (currentTool != "freeze") return;
+    PlaySound("freezeWater");
+
     GameObject newIceBlock = Instantiate(IcePrefab, block.transform.position, IcePrefab.transform.rotation);
     newIceBlock.transform.SetParent(IceContainer.transform);
 
@@ -74,6 +81,7 @@ public class GameManager : MonoBehaviour
   public void BuildHere(Transform target)
   {
     if (currentTool != "jumpingplate") return;
+    PlaySound("build");
 
     GameObject NewJumpingPlate = Instantiate(JumpingplatePrefab, target.position, target.rotation);
   }
@@ -90,19 +98,27 @@ public class GameManager : MonoBehaviour
 
   public void FailLevel()
   {
+    PlaySound("failLevel");
     uiManager.HighlightReset();
   }
 
   public void NextLevel()
   {
-    int currentIndex = SceneManager.GetActiveScene().buildIndex;
-    SceneManager.LoadScene(currentIndex + 1);
+    PlaySound("nextLevel");
+    StartCoroutine(ChangeLevel(1));
   }
 
   public void RestartLevel()
   {
+    PlaySound("restartLevel");
+    StartCoroutine(ChangeLevel(0));
+  }
+
+  private IEnumerator ChangeLevel(int offset)
+  {
+    yield return new WaitForSeconds(0.5f);
     int currentIndex = SceneManager.GetActiveScene().buildIndex;
-    SceneManager.LoadScene(currentIndex);
+    SceneManager.LoadScene(currentIndex + offset);
   }
 
   private string GetDefaultTool()
@@ -121,6 +137,7 @@ public class GameManager : MonoBehaviour
   public void SetTool(string newTool)
   {
     currentTool = newTool;
+    PlaySound("selectTool");
     uiManager.SetCurrentTool(currentTool);
     cursorManager.SetCurrentTool(currentTool);
   }
@@ -130,5 +147,8 @@ public class GameManager : MonoBehaviour
     target.transform.SetParent(InteractableContainer.transform);
   }
 
-
+  public void PlaySound(string sound)
+  {
+    soundManager.PlaySound(sound);
+  }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Door : MonoBehaviour
+public class Door : BaseScript
 {
   private bool open = false;
   private Animator animator;
@@ -19,6 +19,7 @@ public class Door : MonoBehaviour
     open = true;
     collider.enabled = false;
     animator.SetBool("open", open);
+    gameManager.PlaySound("openDoor");
   }
 
   public void Close()
@@ -26,5 +27,6 @@ public class Door : MonoBehaviour
     open = false;
     collider.enabled = true;
     animator.SetBool("open", open);
+    gameManager.PlaySound("openDoor");
   }
 }

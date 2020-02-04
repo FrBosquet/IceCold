@@ -69,6 +69,14 @@ public class Ball : BaseScript
     }
   }
 
+  private void OnCollisionEnter2D(Collision2D other)
+  {
+    if (other.relativeVelocity.magnitude > 1)
+    {
+      gameManager.PlaySound("hit");
+    }
+  }
+
   private void checkFloating()
   {
     if (!isFloating && waterCollider > 0)

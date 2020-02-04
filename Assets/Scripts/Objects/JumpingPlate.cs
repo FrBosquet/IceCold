@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JumpingPlate : MonoBehaviour
+public class JumpingPlate : BaseScript
 {
   public float force;
 
   private Animator animator;
 
-  private void Awake()
+  protected override void Awake()
   {
+    base.Awake();
     animator = gameObject.GetComponent<Animator>();
   }
 
@@ -19,6 +20,8 @@ public class JumpingPlate : MonoBehaviour
     {
 
       Rigidbody2D ball = other.gameObject.GetComponent<Rigidbody2D>();
+
+      gameManager.PlaySound("jump");
 
       animator.SetTrigger("jump");
       ball.AddForce(transform.up * force, ForceMode2D.Impulse);
