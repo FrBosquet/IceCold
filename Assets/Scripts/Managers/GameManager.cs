@@ -58,13 +58,13 @@ public class GameManager : MonoBehaviour
     newBuildSpot.transform.SetParent(BuildSpotContainer.transform);
   }
 
-  public void BreakIce(GameObject block)
+  public bool BreakIce(GameObject block)
   {
-    if (currentTool != "pick") return;
+    if (currentTool != "pick") return false;
     PlaySound("iceBreak");
 
-    Destroy(block);
     UpdateCurrents();
+    return true;
   }
 
   public void FreezeWater(GameObject block)
