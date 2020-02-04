@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5417641860471036077}
   - component: {fileID: 5417641860471036078}
-  - component: {fileID: 5417641860471036079}
   - component: {fileID: 5417641860471036076}
   m_Layer: 0
   m_Name: BuildSpot
@@ -62,19 +61,6 @@ PolygonCollider2D:
       - {x: -0.5, y: -0.5}
       - {x: 0, y: 0}
       - {x: 0.5, y: -0.5}
---- !u!114 &5417641860471036079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5417641860471036072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d5ab5e3f33553b4282f7c1185864794, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: build
 --- !u!114 &5417641860471036076
 MonoBehaviour:
   m_ObjectHideFlags: 0
