@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
   public GameObject WaterPrefab;
   public GameObject IcePrefab;
   public GameObject JumpingplatePrefab;
+  public GameObject BuildSpotPrefab;
 
   public UIManager uiManager;
   public CursorManager cursorManager;
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour
   private GameObject IceContainer;
   private GameObject RockContainer;
   private GameObject WaterContainer;
+  private GameObject BuildSpotContainer;
   private GameObject InteractableContainer;
 
   public string currentTool;
@@ -36,13 +38,21 @@ public class GameManager : MonoBehaviour
     IceContainer = GameObject.Find("IceContainer");
     RockContainer = GameObject.Find("RockContainer");
     WaterContainer = GameObject.Find("WaterContainer");
-    InteractableContainer = GameObject.Find("InteractableContainer");
+    BuildSpotContainer = GameObject.Find("BuildSpotContainer");
   }
 
   private void Start()
   {
     SetTool(GetDefaultTool());
     UpdateUI();
+  }
+
+  public void AddBuildSpot(Vector2 position, Vector2 direction)
+  {
+    if (!availableTools.jumpingplate || BuildSpotContainer == null) return;
+
+    GameObject newBuildSpot = Instantiate(BuildSpotPrefab, position, Quaternion.LookRotation(Vector3.forward, direction));
+    newBuildSpot.transform.SetParent(BuildSpotContainer.transform);
   }
 
   public void BreakIce(GameObject block)
@@ -119,4 +129,6 @@ public class GameManager : MonoBehaviour
   {
     target.transform.SetParent(InteractableContainer.transform);
   }
+
+
 }

@@ -4,23 +4,13 @@ using UnityEngine;
 
 public class Rock : BaseScript
 {
-  public GameObject upSpot;
-  public GameObject rightSpot;
-  public GameObject downSpot;
-  public GameObject leftSpot;
+  public bool[] buildSpots = new bool[4] { false, false, false, false };
 
   private void Start()
   {
-    TileSprite tileSprite = gameObject.GetComponent<TileSprite>();
-
-    upSpot.transform.parent = null;
-    leftSpot.transform.parent = null;
-    rightSpot.transform.parent = null;
-    downSpot.transform.parent = null;
-
-    if (tileSprite.neigbours[1]) Destroy(upSpot);
-    if (tileSprite.neigbours[3]) Destroy(rightSpot);
-    if (tileSprite.neigbours[5]) Destroy(downSpot);
-    if (tileSprite.neigbours[7]) Destroy(leftSpot);
+    if (buildSpots[0]) gameManager.AddBuildSpot((Vector2)transform.position + Vector2.up, Vector2.up);
+    if (buildSpots[1]) gameManager.AddBuildSpot((Vector2)transform.position + Vector2.right, Vector2.right);
+    if (buildSpots[2]) gameManager.AddBuildSpot((Vector2)transform.position + Vector2.down, Vector2.down);
+    if (buildSpots[3]) gameManager.AddBuildSpot((Vector2)transform.position + Vector2.left, Vector2.left);
   }
 }

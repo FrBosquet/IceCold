@@ -1778,6 +1778,11 @@ PrefabInstance:
       propertyPath: neigbours.Array.data[6]
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1702431885354869669, guid: 0f9680622432b474488f9cff77aa9f47,
+        type: 3}
+      propertyPath: buildSpots.Array.data[3]
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5795562610093178072, guid: 0f9680622432b474488f9cff77aa9f47,
         type: 3}
       propertyPath: m_Name
@@ -3224,6 +3229,11 @@ PrefabInstance:
       propertyPath: neigbours.Array.data[7]
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1702431885354869669, guid: 0f9680622432b474488f9cff77aa9f47,
+        type: 3}
+      propertyPath: buildSpots.Array.data[3]
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5795562610093178072, guid: 0f9680622432b474488f9cff77aa9f47,
         type: 3}
       propertyPath: m_Name
@@ -3692,11 +3702,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 7898875861014924070, guid: 1e2e3f335381c07479f86f3a5a896875,
-        type: 3}
-      propertyPath: availableTools.freeze
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7898875861014924071, guid: 1e2e3f335381c07479f86f3a5a896875,
         type: 3}

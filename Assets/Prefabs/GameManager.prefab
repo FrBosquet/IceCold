@@ -516,8 +516,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47c2c2981fe56c42933383e68810b90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentTarget: 
-  highlight: 0
   pick: {fileID: 2800000, guid: b4a7d125585c61a49906dd9657af05e1, type: 3}
   pickHighlight: {fileID: 2800000, guid: 818a996ebe5977e42ad1905582510567, type: 3}
   freeze: {fileID: 2800000, guid: 82e491a180d514e478244dcc5ba7291a, type: 3}
@@ -1120,6 +1118,8 @@ MonoBehaviour:
   IcePrefab: {fileID: 8833431500336269260, guid: c42822cffac248e4bade223e62c1793e,
     type: 3}
   JumpingplatePrefab: {fileID: 6324646069553109107, guid: 9255136d53656aa409afecb74d9f468a,
+    type: 3}
+  BuildSpotPrefab: {fileID: 5417641860471036072, guid: afbe4b4beabf9bd47a7e673716464ff2,
     type: 3}
   uiManager: {fileID: 1679841171}
   cursorManager: {fileID: 1901524512}
