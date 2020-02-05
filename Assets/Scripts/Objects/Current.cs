@@ -7,6 +7,7 @@ public class Current : MonoBehaviour
   public Vector2 direction;
   public float force;
   public new Transform collider;
+  public LineRenderer line;
 
   private ParticleSystem particles;
   private Vector2 position;
@@ -33,13 +34,21 @@ public class Current : MonoBehaviour
     Vector3 shotOrigin = transform.position + (Vector3)normalized / 100;
     RaycastHit2D hit = Physics2D.Raycast(shotOrigin, direction, 100f, mask);
 
+    line.SetPosition(0, shotOrigin);
+    line.SetPosition(1, hit.point);
+
     float particleSpeed = particles.main.startSpeed.constant;
 
     ParticleSystem.MainModule psmain = particles.main;
     psmain.startLifetime = new ParticleSystem.MinMaxCurve(direction.magnitude / particleSpeed);
     particles.Play();
 
-    float distance = Mathf.Min(Mathf.Round(hit.distance), direction.magnitude);
+    float distance = direction.magnitude;
+
+    if (hit.collider != null)
+    {
+      distance = Mathf.Round(hit.distance);
+    }
 
     transform.localScale = new Vector2(distance, 1);
   }
