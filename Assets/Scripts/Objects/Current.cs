@@ -27,13 +27,11 @@ public class Current : MonoBehaviour
     Vector2 normalized = direction.normalized;
 
     transform.position = position - normalized / 2;
-    collider.localPosition = normalized / 2;
-
-    particles.transform.localPosition = -normalized / 2;
-    particles.transform.rotation = Quaternion.LookRotation(Vector3.forward, direction);
+    transform.rotation = Quaternion.LookRotation(Vector3.forward, Vector2.Perpendicular(normalized));
 
     LayerMask mask = LayerMask.GetMask("Solid");
-    RaycastHit2D hit = Physics2D.Raycast(transform.position + (Vector3)normalized / 100, direction, 100f, mask);
+    Vector3 shotOrigin = transform.position + (Vector3)normalized / 100;
+    RaycastHit2D hit = Physics2D.Raycast(shotOrigin, direction, 100f, mask);
 
     float particleSpeed = particles.main.startSpeed.constant;
 
@@ -43,7 +41,7 @@ public class Current : MonoBehaviour
 
     float distance = Mathf.Min(Mathf.Round(hit.distance), direction.magnitude);
 
-    transform.localScale = Vector2.one + normalized * distance - normalized;
+    transform.localScale = new Vector2(distance, 1);
   }
 
   public Vector2 GetForce(Vector2 ballPosition)
