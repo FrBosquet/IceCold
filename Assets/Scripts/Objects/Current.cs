@@ -29,6 +29,9 @@ public class Current : MonoBehaviour
     transform.position = position - normalized / 2;
     collider.localPosition = normalized / 2;
 
+    particles.transform.localPosition = -normalized / 2;
+    particles.transform.rotation = Quaternion.LookRotation(Vector3.forward, direction);
+
     LayerMask mask = LayerMask.GetMask("Solid");
     RaycastHit2D hit = Physics2D.Raycast(transform.position + (Vector3)normalized / 100, direction, 100f, mask);
 
