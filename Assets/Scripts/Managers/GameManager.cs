@@ -13,6 +13,8 @@ public struct AvailableTools
   public int picks;
   public int freezers;
   public int jumpingplates;
+
+  public float jumpingplateforce;
 }
 
 public class GameManager : MonoBehaviour
@@ -32,6 +34,7 @@ public class GameManager : MonoBehaviour
   private GameObject WaterContainer;
   private GameObject BuildSpotContainer;
   private GameObject InteractableContainer;
+  public GameObject Background;
 
   public string currentTool;
 
@@ -48,6 +51,8 @@ public class GameManager : MonoBehaviour
 
   private void Start()
   {
+    Background.SetActive(true);
+
     currentTool = GetDefaultTool();
     cursorManager.SetCurrentTool(currentTool);
 
@@ -91,6 +96,8 @@ public class GameManager : MonoBehaviour
     PlaySound("build");
 
     GameObject NewJumpingPlate = Instantiate(JumpingplatePrefab, target.position, target.rotation);
+
+    NewJumpingPlate.GetComponent<JumpingPlate>().force = availableTools.jumpingplateforce;
   }
 
   private bool UseTool(string tool, int toolsLeft)
