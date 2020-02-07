@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
   public GameObject IcePrefab;
   public GameObject JumpingplatePrefab;
   public GameObject BuildSpotPrefab;
+  public GameObject WaterSparkPrefab;
 
   public UIManager uiManager;
   public CursorManager cursorManager;
@@ -101,6 +102,12 @@ public class GameManager : MonoBehaviour
     GameObject NewJumpingPlate = Instantiate(JumpingplatePrefab, target.position, target.rotation);
 
     NewJumpingPlate.GetComponent<JumpingPlate>().force = availableTools.jumpingplateforce;
+  }
+
+  public void AddWaterSpark(Transform ballTransform)
+  {
+    PlaySound("waterSpark");
+    Instantiate(WaterSparkPrefab, ballTransform.position + Vector3.down * 0.25f, WaterSparkPrefab.transform.rotation);
   }
 
   private bool UseTool(string tool, int toolsLeft)

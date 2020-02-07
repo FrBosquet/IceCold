@@ -75,6 +75,7 @@ public class Ball : BaseScript
     {
       float ammount = rigidbody.velocity.magnitude / 6;
       rigidbody.AddForce(Vector2.up * impactForce * ammount, ForceMode2D.Impulse);
+      gameManager.AddWaterSpark(transform);
     }
 
     isFloating = waterCollider > 0;
