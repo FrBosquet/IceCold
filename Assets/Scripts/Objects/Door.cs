@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Door : BaseScript
 {
-  private bool open = false;
+  public bool open = false;
   private Animator animator;
   private new BoxCollider2D collider;
 
@@ -12,6 +12,8 @@ public class Door : BaseScript
   {
     animator = gameObject.GetComponent<Animator>();
     collider = gameObject.GetComponent<BoxCollider2D>();
+
+    animator.SetBool("open", open);
   }
 
   public void Open()
@@ -28,5 +30,17 @@ public class Door : BaseScript
     collider.enabled = true;
     animator.SetBool("open", open);
     gameManager.PlaySound("openDoor");
+  }
+
+  public void Toggle()
+  {
+    if (open)
+    {
+      Close();
+    }
+    else
+    {
+      Open();
+    }
   }
 }

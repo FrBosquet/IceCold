@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
   public RectTransform pickButton;
   public RectTransform freezeButton;
   public RectTransform jumpingplateButton;
+  public RectTransform handButton;
 
   public RectTransform toolHighlight;
 
@@ -60,6 +61,16 @@ public class UIManager : MonoBehaviour
     {
       jumpingplateButton.gameObject.SetActive(false);
     }
+
+    if (availableTools.hand)
+    {
+      handButton.position = new Vector2(offset, 15);
+      offset += 65;
+    }
+    else
+    {
+      handButton.gameObject.SetActive(false);
+    }
   }
 
   public void SetCurrentTool(string currentTool)
@@ -75,6 +86,10 @@ public class UIManager : MonoBehaviour
       case "jumpingplate":
         toolHighlight.position = jumpingplateButton.position;
         break;
+      case "hand":
+        toolHighlight.position = handButton.position;
+        break;
+
 
     }
   }

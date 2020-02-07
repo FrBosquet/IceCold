@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CursorManager : MonoBehaviour
 {
-  private string currentTool;
-  private string currentTarget;
-  private string currentCursor;
+  public string currentTool;
+  public string currentTarget;
+  public string currentCursor;
   private bool highlight;
 
   public Texture2D pick;
@@ -15,11 +15,14 @@ public class CursorManager : MonoBehaviour
   public Texture2D freezeHighlight;
   public Texture2D jumpingplate;
   public Texture2D jumpingplateHighlight;
+  public Texture2D hand;
+  public Texture2D handHighlight;
 
   private Dictionary<string, string> toolsAndTargets = new Dictionary<string, string>(){
     {"pick", "Ice"},
     {"freeze", "Water"},
     {"jumpingplate", "BuildSpot"},
+    {"hand", "Lever"},
   };
 
   private Dictionary<string, Texture2D> cursors;
@@ -33,6 +36,8 @@ public class CursorManager : MonoBehaviour
       {"freezehighlight", freezeHighlight},
       {"jumpingplate", jumpingplate},
       {"jumpingplatehighlight", jumpingplateHighlight},
+      {"hand", hand},
+      {"handhighlight", handHighlight},
     };
   }
 
@@ -43,7 +48,6 @@ public class CursorManager : MonoBehaviour
     if (hit.collider != null && (toolsAndTargets[currentTool] == hit.collider.tag))
     {
       SetCursor(currentTool + "highlight");
-
     }
     else
     {
@@ -57,17 +61,12 @@ public class CursorManager : MonoBehaviour
     SetCursor(tool);
   }
 
-  public void SetCurrentTarget(string target)
-  {
-    currentTarget = target;
-  }
-
   private void SetCursor(string cursor)
   {
     if (cursor != currentCursor)
     {
       Cursor.SetCursor(cursors[cursor], Vector2.zero, CursorMode.Auto);
-
+      currentCursor = cursor;
     }
   }
 }

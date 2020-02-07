@@ -9,6 +9,7 @@ public struct AvailableTools
   public bool pick;
   public bool freeze;
   public bool jumpingplate;
+  public bool hand;
 
   public int picks;
   public int freezers;
@@ -176,6 +177,7 @@ public class GameManager : MonoBehaviour
   {
     if (availableTools.pick) return "pick";
     if (availableTools.freeze) return "freeze";
+    if (availableTools.hand) return "hand";
     return "none";
   }
 
