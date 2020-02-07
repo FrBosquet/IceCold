@@ -4,59 +4,32 @@ using UnityEngine;
 
 public class StartScreenManager : MonoBehaviour
 {
-  public float startY;
-  public float targetY;
   public Vector2 ballForce;
 
-  public float descentSpeed = 5;
-  public float descentRate = 0.05f;
-  private bool moving = false;
-
   private Rigidbody2D Ball;
+  private UIScroller scroller;
 
   private void Awake()
   {
-    transform.position = new Vector2(400f, startY);
+    scroller = GetComponent<UIScroller>();
 
     Ball = GameObject.Find("Ball").GetComponent<Rigidbody2D>();
   }
 
   private void Start()
   {
-    StartCoroutine("Descent");
-  }
-
-  private IEnumerator Descent()
-  {
-    moving = true;
-
-    while (transform.position.y > targetY)
-    {
-      yield return new WaitForSeconds(descentRate);
-
-      transform.position = new Vector2(transform.position.x, transform.position.y - descentSpeed);
-    }
-    moving = false;
-  }
-
-  private IEnumerator Ascend()
-  {
-    moving = true;
-    while (transform.position.y < startY)
-    {
-      yield return new WaitForSeconds(descentRate);
-
-      transform.position = new Vector2(transform.position.x, transform.position.y + descentSpeed);
-    }
-
-    Ball.AddForce(ballForce, ForceMode2D.Impulse);
-    moving = false;
+    StartCoroutine(scroller.Descent());
   }
 
   public void StartGame()
   {
-    if (moving) return;
-    Debug.Log("Start adventure");
-    StartCoroutine("Ascend");
+    if (scroller.moving) return;
+    StartCoroutine("AscendAndStart");
+  }
+
+  private IEnumerator AscendAndStart()
+  {
+    yield return StartCoroutine(scroller.Ascend());
+    Ball.AddForce(ballForce, ForceMode2D.Impulse);
   }
 }
