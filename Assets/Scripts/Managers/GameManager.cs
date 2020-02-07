@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
   public UIManager uiManager;
   public CursorManager cursorManager;
   public SoundManager soundManager;
+  public bool NoUI = false;
 
   private GameObject BackgroundContainer;
   private GameObject IceContainer;
@@ -52,6 +53,8 @@ public class GameManager : MonoBehaviour
   private void Start()
   {
     Background.SetActive(true);
+
+    if (NoUI) uiManager.gameObject.SetActive(false);
 
     currentTool = GetDefaultTool();
     cursorManager.SetCurrentTool(currentTool);
