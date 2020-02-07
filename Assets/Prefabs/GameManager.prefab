@@ -2020,7 +2020,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2122662724
 Transform:
   m_ObjectHideFlags: 0
@@ -2072,7 +2072,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -200
   m_Sprite: {fileID: 7185661899084076643, guid: 235d58956706c964889b6097cca66f63,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3147,6 +3147,7 @@ MonoBehaviour:
   uiManager: {fileID: 1679841171}
   cursorManager: {fileID: 1901524512}
   soundManager: {fileID: 1002070358723321835}
+  NoUI: 0
   Background: {fileID: 2122662723}
   currentTool: 
   availableTools:
@@ -3155,7 +3156,7 @@ MonoBehaviour:
     jumpingplate: 1
     picks: 4
     freezers: 2
-    jumpingplates: 1
+    jumpingplates: 0
     jumpingplateforce: 35
 --- !u!1 &8103019187473477062
 GameObject:
