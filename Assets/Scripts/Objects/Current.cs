@@ -47,7 +47,7 @@ public class Current : MonoBehaviour
 
     if (hit.collider != null)
     {
-      distance = Mathf.Round(hit.distance);
+      distance = Mathf.Min(Mathf.Round(hit.distance), distance);
     }
 
     transform.localScale = new Vector2(distance, 1);

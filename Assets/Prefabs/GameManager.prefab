@@ -1718,6 +1718,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d47c2c2981fe56c42933383e68810b90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentTool: 
+  currentTarget: 
+  currentCursor: 
   pick: {fileID: 2800000, guid: b4a7d125585c61a49906dd9657af05e1, type: 3}
   pickHighlight: {fileID: 2800000, guid: 818a996ebe5977e42ad1905582510567, type: 3}
   freeze: {fileID: 2800000, guid: 82e491a180d514e478244dcc5ba7291a, type: 3}
@@ -1725,6 +1728,8 @@ MonoBehaviour:
   jumpingplate: {fileID: 2800000, guid: 99bfc1ffeb4c1ed448bc45412827af98, type: 3}
   jumpingplateHighlight: {fileID: 2800000, guid: 56f89aea2018d9c43bfb4b7adc81e685,
     type: 3}
+  hand: {fileID: 0}
+  handHighlight: {fileID: 0}
 --- !u!61 &1901524513
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3490,11 +3495,11 @@ MonoBehaviour:
   availableTools:
     pick: 1
     freeze: 0
-    jumpingplate: 1
-    hand: 1
-    picks: 4
+    jumpingplate: 0
+    hand: 0
+    picks: 1
     freezers: 0
-    jumpingplates: 3
+    jumpingplates: 0
     jumpingplateforce: 70
 --- !u!1 &8103019187473477062
 GameObject:
@@ -3848,7 +3853,7 @@ MonoBehaviour:
   pickButton: {fileID: 1727137552}
   freezeButton: {fileID: 1855645719}
   jumpingplateButton: {fileID: 984220225712010134}
-  handButton: {fileID: 0}
+  handButton: {fileID: 5269310623335762103}
   toolHighlight: {fileID: 627625653212771537}
 --- !u!1 &8251701014542450712
 GameObject:

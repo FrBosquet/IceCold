@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StartScreenManager : MonoBehaviour
+public class StartScreenManager : BaseScript
 {
   public Vector2 ballForce;
 
   private Rigidbody2D Ball;
   private UIScroller scroller;
 
-  private void Awake()
+  protected override void Awake()
   {
+    base.Awake();
     scroller = GetComponent<UIScroller>();
 
     Ball = GameObject.Find("Ball").GetComponent<Rigidbody2D>();
@@ -18,7 +19,7 @@ public class StartScreenManager : MonoBehaviour
 
   private void Start()
   {
-    StartCoroutine(scroller.Descent());
+    StartCoroutine("DescendAndMenu");
   }
 
   public void StartGame()
@@ -27,8 +28,15 @@ public class StartScreenManager : MonoBehaviour
     StartCoroutine("AscendAndStart");
   }
 
+  private IEnumerator DescendAndMenu()
+  {
+    yield return StartCoroutine(scroller.Descent());
+    gameManager.PlaySound("rockBreak");
+  }
+
   private IEnumerator AscendAndStart()
   {
+    gameManager.PlaySound("jump");
     yield return StartCoroutine(scroller.Ascend());
     Ball.AddForce(ballForce, ForceMode2D.Impulse);
   }

@@ -202,6 +202,7 @@ public class GameManager : MonoBehaviour
 
   public void PlaySound(string sound)
   {
+    Debug.Log("PlaySound");
     soundManager.PlaySound(sound);
   }
 }

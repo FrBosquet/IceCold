@@ -13,6 +13,8 @@ TagManager:
   - Ice
   - Cursor
   - BuildSpot
+  - Lever
+  - Key
   layers:
   - Default
   - TransparentFX
@@ -26,7 +28,7 @@ TagManager:
   - Solid
   - Background
   - BuildSpot
-  - 
+  - Lever
   - 
   - 
   - 

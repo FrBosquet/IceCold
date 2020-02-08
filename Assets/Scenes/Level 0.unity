@@ -172,11 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 108091e5e1083f847abb987da0233164, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startY: 775
-  targetY: 300
   ballForce: {x: 30, y: 20}
-  descentSpeed: 2.5
-  descentRate: 0.01
 --- !u!114 &61067293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1092,13 +1088,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7898875861014924070, guid: 1e2e3f335381c07479f86f3a5a896875,
         type: 3}
-      propertyPath: availableTools.jumpingplates
+      propertyPath: NoUI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898875861014924070, guid: 1e2e3f335381c07479f86f3a5a896875,
+        type: 3}
+      propertyPath: availableTools.pick
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898875861014924070, guid: 1e2e3f335381c07479f86f3a5a896875,
+        type: 3}
+      propertyPath: availableTools.jumpingplate
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7898875861014924070, guid: 1e2e3f335381c07479f86f3a5a896875,
         type: 3}
-      propertyPath: NoUI
-      value: 1
+      propertyPath: availableTools.hand
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898875861014924070, guid: 1e2e3f335381c07479f86f3a5a896875,
+        type: 3}
+      propertyPath: availableTools.freeze
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7898875861014924071, guid: 1e2e3f335381c07479f86f3a5a896875,
         type: 3}
@@ -1153,11 +1164,6 @@ PrefabInstance:
     - target: {fileID: 7898875861014924071, guid: 1e2e3f335381c07479f86f3a5a896875,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8251701014203405615, guid: 1e2e3f335381c07479f86f3a5a896875,
-        type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
