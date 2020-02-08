@@ -6009,7 +6009,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: It was a hard journey, full of ups and downs, but you managed to overcome
-    all the tests and finally managed to reach the end.
+    all the tests and finally reached the end.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1127d96b3ff5c694ab559f7e58ebf29d, type: 2}
   m_sharedMaterial: {fileID: -7423082217981135743, guid: 1127d96b3ff5c694ab559f7e58ebf29d,
@@ -6079,12 +6079,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1217355580}
-    characterCount: 125
+    characterCount: 116
     spriteCount: 0
-    spaceCount: 24
-    wordCount: 25
+    spaceCount: 22
+    wordCount: 23
     linkCount: 0
-    lineCount: 4
+    lineCount: 3
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -6719,8 +6719,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: 'Now the ball will live a life full of joy with his family and... Well,
-    actually, it''s just a ball, a plastic one. It has no life at all. But you could
-    live that life... '
+    actually, it''s just a ball. It has no life at all.
+
+
+    But you could live that life... '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1127d96b3ff5c694ab559f7e58ebf29d, type: 2}
   m_sharedMaterial: {fileID: -7423082217981135743, guid: 1127d96b3ff5c694ab559f7e58ebf29d,
@@ -6787,15 +6789,15 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: -15.123413}
   m_textInfo:
     textComponent: {fileID: 1438641247}
-    characterCount: 169
+    characterCount: 155
     spriteCount: 0
-    spaceCount: 35
-    wordCount: 35
+    spaceCount: 33
+    wordCount: 32
     linkCount: 0
-    lineCount: 5
+    lineCount: 6
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -7228,9 +7230,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Anyway, thanks for playing this particular game. And thanks to MFGJ: Winter
-    2020 for organizing such a great event. It was really fun! I''m looking forward
-    for the next one.'
+  m_text: 'Anyway, thanks for playing this game. And thanks to MFGJ: Winter 2020 for
+    organizing such a great game jam. It was really fun! I''m looking forward for
+    the next one.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1127d96b3ff5c694ab559f7e58ebf29d, type: 2}
   m_sharedMaterial: {fileID: -7423082217981135743, guid: 1127d96b3ff5c694ab559f7e58ebf29d,
@@ -7300,7 +7302,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1551883295}
-    characterCount: 172
+    characterCount: 164
     spriteCount: 0
     spaceCount: 29
     wordCount: 30
