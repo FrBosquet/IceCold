@@ -5771,7 +5771,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1238108923, guid: 0f9680622432b474488f9cff77aa9f47, type: 3}
       propertyPath: neigbours.Array.data[7]
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1238108923, guid: 0f9680622432b474488f9cff77aa9f47, type: 3}
       propertyPath: neigbours.Array.data[8]
@@ -7203,7 +7203,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1238108923, guid: 0f9680622432b474488f9cff77aa9f47, type: 3}
       propertyPath: neigbours.Array.data[3]
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1238108923, guid: 0f9680622432b474488f9cff77aa9f47, type: 3}
       propertyPath: neigbours.Array.data[4]
